@@ -299,3 +299,62 @@ textarea {
   gap: 12px;
   flex-wrap: wrap;
 }
+
+
+/* === Patch: Month title bigger, Browse File button larger, CSV filename smaller === */
+
+/* 1) Enlarge the "Filter by month" TITLE text */
+label[for="monthFilter"],
+#monthTitle,
+.filters label.month-title {
+  font-size: 1.6rem;   /* increase title size */
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* If you also want the month <select> itself slightly bigger than other selects */
+#monthFilter {
+  font-size: 2.2em !important;    /* nudge above the global 2em rule */
+  padding: 0.7em 0.95em !important;
+  min-height: 44px;
+  border-radius: 8px;
+}
+
+/* 2) Make the actual "Browse file" BUTTON part larger */
+input[type="file"]::file-selector-button {
+  font-size: 2.2em;               /* larger than the input text */
+  padding: 0.8em 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* Safari/WebKit fallback */
+input[type="file"]::-webkit-file-upload-button {
+  font-size: 2.2em;
+  padding: 0.8em 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 3) Halve the size of the CSV filename display (with ellipsis) */
+#csvFileName,
+.csv-file-name,
+#fileNameDisplay {
+  font-size: 0.5em;               /* half of surrounding size */
+  line-height: 1.2;
+  opacity: 0.9;
+  display: inline-block;
+  max-width: 60ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Optional: nice layout if filename sits beside the file input */
+.csv-file-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
