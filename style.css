@@ -358,3 +358,15 @@ input[type="file"]::-webkit-file-upload-button {
   gap: 0.6rem;
   flex-wrap: wrap;
 }
+/* === Adjust Browse File size (smaller) === */
+input[type="file"]::file-selector-button,
+input[type="file"]::-webkit-file-upload-button {
+  font-size: 1.2rem;      /* down from 2.2em */
+  padding: 0.4rem 0.8rem; /* smaller tap area but still usable */
+  border-radius: 6px;
+}
+
+input[type="file"] {
+  font-size: 0.95rem;     /* filename text slightly smaller */
+  min-height: 38px;
+}
