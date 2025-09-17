@@ -7,12 +7,12 @@
    - Triple the Browse File (CSV) input
 ================================================ */
 button, .btn, .btn-adv, .btn-row button {
-  font-size: 1em !important;          /* was 2em */
+  font-size: 1.5em !important;          /* was 2em */
   padding: 0.6em 0.8em !important;    /* was 1.2em 1.6em */
   line-height: 1.1 !important;
 }
 button.small {
-  font-size: 0.85em !important;       /* was 1.7em */
+  font-size: 1.5em !important;       /* was 1.7em */
   padding: 0.5em 0.65em !important;   /* was 1.0em 1.3em */
 }
 #csvFile {
