@@ -1,3 +1,42 @@
+
+// === Injected: runtime CSS overrides for V1.2 ===
+(function() {
+  try {
+    var css = `/* ===== SpendLight V1.2 CSS overrides (injected by script.js) =====
+   - Decrease all buttons to half size
+   - Triple the Browse File (CSV) input
+================================================ */
+button, .btn, .btn-adv, .btn-row button {
+  font-size: 1em !important;          /* was 2em */
+  padding: 0.6em 0.8em !important;    /* was 1.2em 1.6em */
+  line-height: 1.1 !important;
+}
+button.small {
+  font-size: 0.85em !important;       /* was 1.7em */
+  padding: 0.5em 0.65em !important;   /* was 1.0em 1.3em */
+}
+#csvFile {
+  font-size: 3em !important;          /* triple emphasis */
+  line-height: 1.25 !important;
+  padding: 1.2em 1.3em !important;    /* padding may not affect native UAs, but helps where supported */
+}
+.pager button {
+  font-size: 0.95em !important;
+  padding: 0.45em 0.6em !important;
+  min-width: 38px;
+}`;
+    var style = document.createElement('style');
+    style.setAttribute('data-spendlite', 'v1.2-overrides');
+    style.appendChild(document.createTextNode(css));
+    if (document.head) document.head.appendChild(style);
+    else document.addEventListener('DOMContentLoaded', function() {
+      document.head && document.head.appendChild(style);
+    });
+  } catch (e) { console.warn('CSS override injection failed', e); }
+})();
+// === End injection ===
+
+
 // SpendLite V1 (clean wiring) — fixes: defensive event binding, no double listeners, removed obsolete IDs
 // Keeps: CSV load, month filter, category totals export, rules import/export, PayPal next-word logic, collapse + pager
 
